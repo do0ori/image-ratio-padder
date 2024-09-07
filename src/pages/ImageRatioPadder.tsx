@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { useState } from "react";
 import {
     LuSquare,
     LuRectangleHorizontal,
@@ -11,7 +11,7 @@ import BgColorSelector from "../components/BgColorSelector";
 import ImagePreview from "../components/ImagePreview";
 
 const ImageRatioPadder: React.FC = () => {
-    const [image, setImage] = useState<string | null>(null);
+    const [image, setImage] = useState<HTMLImageElement | null>(null);
     const [ratio, setRatio] = useState<string>("1:1");
     const [backgroundColor, setBackgroundColor] = useState<string>("#ffffff");
 
@@ -31,17 +31,21 @@ const ImageRatioPadder: React.FC = () => {
         },
     ];
 
-    const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = (e: ProgressEvent<FileReader>) => {
-                if (typeof e.target?.result === "string") {
-                    setImage(e.target.result);
-                }
+    const handleImageUpload = (file: File) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+            const img = new Image();
+            img.src = reader.result as string;
+
+            img.onload = () => {
+                setImage(img);
             };
-            reader.readAsDataURL(file);
-        }
+
+            img.onerror = () => {
+                console.error("Failed to load the image.");
+            };
+        };
+        reader.readAsDataURL(file);
     };
 
     return (
