@@ -27,6 +27,9 @@ const RatioSelector: React.FC<RatioSelectorProps> = ({
     const [isOpen, setIsOpen] = useState(false); // State to control dropdown visibility
     const [isCustom, setIsCustom] = useState(false); // State to manage custom ratio input
     const [customRatio, setCustomRatio] = useState(""); // State to hold custom ratio
+    const [isValid, setIsValid] = useState<boolean>(true); // Validation state for custom ratio
+    const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true); // Disable button if invalid
+
     const dropdownRef = useRef<HTMLDivElement>(null); // To detect outside clicks
 
     // Toggle dropdown visibility
@@ -62,18 +65,45 @@ const RatioSelector: React.FC<RatioSelectorProps> = ({
         setIsOpen(false); // Close dropdown after selecting an option
     };
 
-    // Handle custom ratio input
+    // Validate custom ratio input
+    const validateCustomRatio = (input: string) => {
+        // Regex for decimal and integer numbers in the format "number:number"
+        const ratioRegex = /^\d*\.?\d+:\d*\.?\d+$/;
+
+        // Check if the custom ratio is in the correct format
+        if (!ratioRegex.test(input)) {
+            setIsValid(false); // Mark input as invalid
+            setIsButtonDisabled(true); // Disable the button
+            return false;
+        }
+
+        // Split the ratio and ensure both parts are greater than 0
+        const [width, height] = input.split(":").map(Number);
+        if (width <= 0 || height <= 0) {
+            setIsValid(false); // Mark input as invalid if values are non-positive
+            setIsButtonDisabled(true); // Disable the button
+            return false;
+        }
+
+        setIsValid(true); // Mark input as valid
+        setIsButtonDisabled(false); // Enable the button
+        return true;
+    };
+
+    // Handle custom ratio input changes
     const handleCustomRatioChange = (
         e: React.ChangeEvent<HTMLInputElement>
     ) => {
-        setCustomRatio(e.target.value);
+        const value = e.target.value;
+        setCustomRatio(value);
+        validateCustomRatio(value); // Validate the ratio as the input changes
     };
 
     // Handle custom ratio submission
     const handleCustomRatioSubmit = () => {
-        if (customRatio) {
-            setRatio(customRatio); // Set custom ratio
-            setIsCustom(false); // Hide custom input field
+        if (isValid) {
+            setRatio(customRatio); // Set the custom ratio if valid
+            setIsCustom(false); // Hide the custom input field
         }
     };
 
@@ -134,11 +164,16 @@ const RatioSelector: React.FC<RatioSelectorProps> = ({
                                 value={customRatio}
                                 onChange={handleCustomRatioChange}
                                 className="flex-grow pl-3 pr-3 py-2 text-base bg-gray-50 border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-l-md"
-                                placeholder="16:9"
+                                placeholder="예: 16:9"
                             />
                             <button
                                 onClick={handleCustomRatioSubmit}
-                                className="bg-blue-500 text-white py-2 px-4 flex items-center justify-center hover:bg-blue-600 rounded-r-md"
+                                disabled={isButtonDisabled}
+                                className={`py-2 px-4 flex items-center justify-center rounded-r-md ${
+                                    isButtonDisabled
+                                        ? "bg-gray-300 cursor-not-allowed"
+                                        : "bg-blue-500 text-white hover:bg-blue-600"
+                                }`}
                                 title="적용하기"
                             >
                                 <RiCheckLine className="h-5 w-5" />
