@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/image-ratio-padder/static/css/main.b9991ae1.css",
+    "main.js": "/image-ratio-padder/static/js/main.1f2bfe32.js",
+    "static/js/453.850304fc.chunk.js": "/image-ratio-padder/static/js/453.850304fc.chunk.js",
+    "index.html": "/image-ratio-padder/index.html",
+    "main.b9991ae1.css.map": "/image-ratio-padder/static/css/main.b9991ae1.css.map",
+    "main.1f2bfe32.js.map": "/image-ratio-padder/static/js/main.1f2bfe32.js.map",
+    "453.850304fc.chunk.js.map": "/image-ratio-padder/static/js/453.850304fc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b9991ae1.css",
+    "static/js/main.1f2bfe32.js"
+  ]
+}
