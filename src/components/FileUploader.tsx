@@ -49,7 +49,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({ handleImageUpload }) => {
             >
                 <div className="flex flex-col items-center justify-center pt-5 pb-6">
                     <LuUpload className="w-8 h-8 mb-4 text-gray-500" />
-                    <p className="mb-2 text-sm text-gray-500">
+                    <p className="mb-2 text-lg text-gray-500">
                         <span className="font-semibold">
                             클릭하거나 드래그하여 업로드
                         </span>

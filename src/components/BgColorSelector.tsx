@@ -12,7 +12,7 @@ const BgColorSelector: React.FC<BgColorSelectorProps> = ({
     return (
         <div className="mb-4">
             <div className="flex items-center">
-                <label className="block text-sm font-medium text-gray-700 mr-4 w-32 whitespace-nowrap">
+                <label className="block text-lg font-medium text-gray-700 mr-4 w-52 whitespace-nowrap">
                     배경색
                 </label>
                 <input

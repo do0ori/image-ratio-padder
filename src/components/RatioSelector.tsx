@@ -111,13 +111,13 @@ const RatioSelector: React.FC<RatioSelectorProps> = ({
         <div>
             <div className="mb-4" ref={dropdownRef}>
                 <div className="flex items-center">
-                    <label className="block text-sm font-medium text-gray-700 mr-4 w-32 whitespace-nowrap">
+                    <label className="block text-lg font-medium text-gray-700 mr-4 w-52 whitespace-nowrap">
                         원하는 비율
                     </label>
                     <div className="relative w-full">
                         <button
                             onClick={handleToggle} // Toggle dropdown on button click
-                            className="block w-full pl-3 pr-3 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md bg-gray-100 hover:bg-gray-200 flex items-center justify-between"
+                            className="block w-full pl-3 pr-3 py-2 text-lg border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 lg:text-lg rounded-md bg-gray-100 hover:bg-gray-200 flex items-center justify-between"
                         >
                             <span className="flex items-center">
                                 {extendedOptions.find(
@@ -155,7 +155,7 @@ const RatioSelector: React.FC<RatioSelectorProps> = ({
             <div className="mb-4">
                 {isCustom && (
                     <div className="flex items-center">
-                        <label className="block text-sm font-medium text-gray-700 mr-4 w-32 whitespace-nowrap">
+                        <label className="block text-lg font-medium text-gray-700 mr-4 w-52 whitespace-nowrap">
                             비율 입력
                         </label>
                         <div className="flex w-full">
@@ -163,7 +163,7 @@ const RatioSelector: React.FC<RatioSelectorProps> = ({
                                 type="text"
                                 value={customRatio}
                                 onChange={handleCustomRatioChange}
-                                className="flex-grow pl-3 pr-3 py-2 text-base bg-gray-50 border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-l-md"
+                                className="flex-grow pl-3 pr-3 py-2 text-lg bg-gray-50 border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 lg:text-lg rounded-l-md"
                                 placeholder="예: 16:9"
                             />
                             <button
@@ -176,7 +176,7 @@ const RatioSelector: React.FC<RatioSelectorProps> = ({
                                 }`}
                                 title="적용하기"
                             >
-                                <RiCheckLine className="h-5 w-5" />
+                                <RiCheckLine className="h-7 w-7" />
                             </button>
                         </div>
                     </div>

@@ -49,7 +49,7 @@ const ImageRatioPadder: React.FC = () => {
     };
 
     return (
-        <div className="p-4 max-w-md mx-auto">
+        <div className="p-4 max-w-2xl mx-auto">
             <Header
                 email="fuzzydo0ori@gmail.com"
                 githubRepo="https://github.com/do0ori/image-ratio-padder"

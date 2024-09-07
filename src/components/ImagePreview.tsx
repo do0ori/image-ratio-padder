@@ -67,7 +67,7 @@ const ImagePreview: React.FC<ImagePreviewProps> = ({
         <div>
             {image ? (
                 <div className="mt-4">
-                    <h2 className="text-lg font-semibold mb-2">미리보기</h2>
+                    <h2 className="text-2xl font-semibold mb-2">미리보기</h2>
                     {/* Fast Preview */}
                     <div
                         style={{
@@ -98,18 +98,18 @@ const ImagePreview: React.FC<ImagePreviewProps> = ({
                         onClick={handleDownload}
                         className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full flex items-center justify-center"
                     >
-                        <LuDownload className="w-5 h-5 mr-2" />
-                        이미지 다운로드
+                        <LuDownload className="w-7 h-7 mr-2" />
+                        <p className="text-lg">이미지 다운로드</p>
                     </button>
                 </div>
             ) : (
                 <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4">
                     <div className="flex">
                         <div className="flex-shrink-0">
-                            <LuAlertCircle className="h-5 w-5 text-yellow-400" />
+                            <LuAlertCircle className="h-7 w-7 text-yellow-400" />
                         </div>
                         <div className="ml-3">
-                            <p className="text-sm text-yellow-700">
+                            <p className="text-lg text-yellow-700">
                                 이미지를 업로드하면 여기에 미리보기가
                                 표시됩니다.
                             </p>
