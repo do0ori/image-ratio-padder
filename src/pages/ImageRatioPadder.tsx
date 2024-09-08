@@ -16,17 +16,39 @@ const ImageRatioPadder: React.FC = () => {
     const [backgroundColor, setBackgroundColor] = useState<string>("#ffffff");
 
     const ratioOptions = [
-        { value: "1:1", label: "1:1", icon: <LuSquare /> },
-        { value: "4:3", label: "4:3", icon: <LuRectangleHorizontal /> },
         {
-            value: "16:9",
-            label: "16:9",
+            value: "1:1",
+            label: "1:1 (정사각형, SNS 프로필)",
+            icon: <LuSquare />,
+        },
+        {
+            value: "1.91:1",
+            label: "1.91:1 (velog 썸네일)",
             icon: <LuRectangleHorizontal />,
         },
-        { value: "3:4", label: "3:4", icon: <LuRectangleVertical /> },
         {
-            value: "1.9:1",
-            label: "1.9:1 (velog 썸네일)",
+            value: "3:4",
+            label: "3:4 (세로, 인쇄 사진 비율)",
+            icon: <LuRectangleVertical />,
+        },
+        {
+            value: "4:3",
+            label: "4:3 (가로, 일반 사진)",
+            icon: <LuRectangleHorizontal />,
+        },
+        {
+            value: "4:5",
+            label: "4:5 (세로, 인스타그램 포스트)",
+            icon: <LuRectangleVertical />,
+        },
+        {
+            value: "9:16",
+            label: "9:16 (스토리, 인스타그램/틱톡)",
+            icon: <LuRectangleVertical />,
+        },
+        {
+            value: "16:9",
+            label: "16:9 (와이드스크린, 유튜브 썸네일)",
             icon: <LuRectangleHorizontal />,
         },
     ];
