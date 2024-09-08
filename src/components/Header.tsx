@@ -13,7 +13,11 @@ const Header: React.FC<HeaderProps> = ({ email, githubRepo }) => {
 
             {/* Icons for Email and GitHub */}
             <div className="flex space-x-4">
-                <a href={`mailto:${email}`} aria-label="Email">
+                <a
+                    href={`mailto:${email}`}
+                    aria-label="Email"
+                    title="이메일 보내기"
+                >
                     <IoIosMail className="w-8 h-8 text-gray-600 hover:text-gray-900" />
                 </a>
                 <a
@@ -21,6 +25,7 @@ const Header: React.FC<HeaderProps> = ({ email, githubRepo }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="GitHub"
+                    title="깃허브 저장소 방문하기"
                 >
                     <FaGithub className="w-8 h-8 text-gray-600 hover:text-gray-900" />
                 </a>
