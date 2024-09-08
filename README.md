@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+# 🖼️ Image Ratio Padder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+사용자가 이미지, 이미지 비율, 배경 색상을 선택하면 **원본 크기를 유지**하면서 입력된 비율에 맞게 나머지 부분을 지정한 색상으로 채워주는 웹 애플리케이션입니다.
 
-## Available Scripts
+## 🎯 프로젝트 동기
 
-In the project directory, you can run:
+이 프로젝트는 velog에 글을 작성할 때 발생하는 **thumbnail 이미지 잘림 문제**를 해결하기 위해 시작되었습니다. velog의 thumbnail 이미지 비율(1.91:1)에 맞지 않는 이미지를 업로드하면 이미지가 확대되며 강제로 잘리게 됩니다. 이 문제를 해결할 수 있는 웹 애플리케이션을 찾지 못해 직접 만들었으며, 기존에는 [vanilla JavaScript, HTML, CSS로 구현](https://github.com/do0ori/image-ratio-padder-vanilla)했으나 **코드 유지보수성**과 **사용자 경험**(UX)을 개선하기 위해 React로 재구현하게 되었습니다.
 
-### `npm start`
+## ✨ 주요 기능
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. **이미지 업로드**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+    - **드래그 앤 드롭** 또는 클릭하여 이미지를 업로드할 수 있습니다.
+    - 업로드된 이미지는 **실시간**으로 선택한 비율 및 배경색에 맞춰 **미리보기**가 가능합니다.
 
-### `npm test`
+2. **다양한 이미지 비율 선택**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    - 다양한 **이미지 비율**을 선택할 수 있습니다.
+    - 사용자 정의 비율 입력도 지원하며, 실시간으로 **입력 값 검증**이 이루어집니다.
+      (버튼 및 입력 필드는 사용자의 입력에 따라 동적으로 활성화 또는 비활성화되어 **잘못된 상태**를 방지합니다.)
 
-### `npm run build`
+3. **배경 색상 선택**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    - 사용자가 원하는 **배경 색상**을 선택할 수 있습니다.
+    - 선택한 배경색은 미리보기 화면에 실시간으로 반영됩니다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **실시간 이미지 미리보기**
+    - 선택한 비율과 배경색을 **실시간으로 미리보기**하여 보여줍니다.
+    - 이미지가 즉시 처리되지 않고, **다운로드 버튼**을 클릭할 때 이미지가 최종 처리되어 다운로드됩니다.
+    - 이미지가 없을 경우 경고 메시지와 아이콘이 표시되어 사용자가 이미지를 업로드해야 함을 직관적으로 알 수 있습니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Vanilla JS 버전 대비 개선 사항
 
-### `npm run eject`
+-   **모듈화**
+    -   재사용 가능한 컴포넌트로 기능 분리, 코드 가독성 및 유지보수성을 개선했습니다.
+-   **향상된 사용자 경험**
+    -   React의 컴포넌트 기반 아키텍처를 활용해 UI가 보다 **빠르고 유연하게 업데이트**되었습니다.
+-   **빠른 미리보기 및 지연된 이미지 처리**
+    -   미리보기를 CSS를 사용하여 빠르게 렌더링하고, 실제 이미지 처리 작업(크기 조정 및 패딩 적용)은 다운로드 시에만 진행되어 **최적의 성능**을 보장합니다.
+-   **새로 추가된 기능**
+    -   **드래그 앤 드롭 이미지 업로드**
+        -   이전 버전에서는 클릭을 통한 파일 선택만 가능했으나, 이제 드래그 앤 드롭을 통해 이미지를 업로드할 수 있습니다.
+        -   클릭 후 파일 탐색기의 파일 이름 필드에 이미지 URL을 입력하여 업로드도 가능합니다.
+    -   **드롭다운 이미지 비율 선택**
+        -   드롭다운 메뉴에서 사전 정의된 비율을 선택하거나 사용자 정의 비율을 입력할 수 있습니다.
+        -   사용자 정의 비율 입력 시 실시간 값 검증을 통해 잘못된 상태를 방지합니다.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 🛠️ 사용법
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+👉 https://do0ori.github.io/image-ratio-padder/
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. 클릭하여 이미지를 선택하거나 드래그 앤 드롭하여 이미지를 업로드합니다.
+2. 원하는 이미지 비율을 선택하거나, 직접 입력합니다.
+3. 배경색을 선택하여 이미지를 채웁니다.
+4. 다운로드 버튼을 클릭해 처리된 이미지를 다운로드합니다.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 💻 기술 스택
 
-## Learn More
+<p>
+    <img src="https://img.shields.io/badge/Typescript-2d79c7?style=for-the-badge&logo=Typescript&logoColor=white">
+    <img src="https://img.shields.io/badge/Create React App-282c35?style=for-the-badge&logo=createreactapp&logoColor=09D3AC">
+    <img src="https://img.shields.io/badge/Tailwind CSS-131729?style=for-the-badge&logo=Tailwind CSS&logoColor=78baf2">
+</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🤝 기여
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+기여를 원하시면 먼저 이 저장소를 [**포크**(fork)](https://github.com/do0ori/image-ratio-padder/fork)하고, 새로운 브랜치를 생성한 후 PR을 제출해주세요. 버그를 발견하거나 새로운 기능 제안 등의 기여는 [**이슈**(Issues)](https://github.com/do0ori/image-ratio-padder/issues)를 작성해주세요. 모든 형태의 기여는 환영합니다!
