@@ -49,6 +49,8 @@
 
 👉 https://do0ori.github.io/image-ratio-padder/
 
+![Image Ratio Padder Example](https://github.com/user-attachments/assets/e43b0815-ee3c-4cc1-af64-87cd1f0835d1)
+
 1. 클릭하여 이미지를 선택하거나 드래그 앤 드롭하여 이미지를 업로드합니다.
 2. 원하는 이미지 비율을 선택하거나, 직접 입력합니다.
 3. 배경색을 선택하여 이미지를 채웁니다.
@@ -64,4 +66,4 @@
 
 ## 🤝 기여
 
-기여를 원하시면 먼저 이 저장소를 [**포크**(fork)](https://github.com/do0ori/image-ratio-padder/fork)하고, 새로운 브랜치를 생성한 후 PR을 제출해주세요. 버그를 발견하거나 새로운 기능 제안 등의 기여는 [**이슈**(Issues)](https://github.com/do0ori/image-ratio-padder/issues)를 작성해주세요. 모든 형태의 기여는 환영합니다!
+기여를 원하시면 먼저 이 저장소를 [**포크**(fork)](https://github.com/do0ori/image-ratio-padder/fork)하고, 새로운 브랜치를 생성한 후 PR을 제출해주세요. 버그 발견, 새로운 기능 제안 등의 기여는 [**이슈**(Issues)](https://github.com/do0ori/image-ratio-padder/issues)를 작성해주세요. 모든 형태의 기여를 환영합니다!
