@@ -49,7 +49,7 @@
 
 👉 https://do0ori.github.io/image-ratio-padder/
 
-![Image Ratio Padder Example](https://github.com/user-attachments/assets/e43b0815-ee3c-4cc1-af64-87cd1f0835d1)
+[![Image Ratio Padder Example](https://github.com/user-attachments/assets/e43b0815-ee3c-4cc1-af64-87cd1f0835d1)](https://do0ori.github.io/image-ratio-padder/)
 
 1. 클릭하여 이미지를 선택하거나 드래그 앤 드롭하여 이미지를 업로드합니다.
 2. 원하는 이미지 비율을 선택하거나, 직접 입력합니다.
