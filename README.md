@@ -6,6 +6,25 @@
 
 이 프로젝트는 velog에 글을 작성할 때 발생하는 **thumbnail 이미지 잘림 문제**를 해결하기 위해 시작되었습니다. velog의 thumbnail 이미지 비율(1.91:1)에 맞지 않는 이미지를 업로드하면 이미지가 확대되며 강제로 잘리게 됩니다. 이 문제를 해결할 수 있는 웹 애플리케이션을 찾지 못해 직접 만들었으며, 기존에는 [vanilla JavaScript, HTML, CSS로 구현](https://github.com/do0ori/image-ratio-padder-vanilla)했으나 **코드 유지보수성**과 **사용자 경험**(UX)을 개선하기 위해 React로 재구현하게 되었습니다.
 
+## 🛠️ 사용법
+
+👉 https://do0ori.github.io/image-ratio-padder/
+
+[![Image Ratio Padder Example](https://github.com/user-attachments/assets/e43b0815-ee3c-4cc1-af64-87cd1f0835d1)](https://do0ori.github.io/image-ratio-padder/)
+
+1. 클릭하여 이미지를 선택하거나 드래그 앤 드롭하여 이미지를 업로드합니다.
+2. 원하는 이미지 비율을 선택하거나, 직접 입력합니다.
+3. 배경색을 선택하여 이미지를 채웁니다.
+4. 다운로드 버튼을 클릭해 처리된 이미지를 다운로드합니다.
+
+## 💻 기술 스택
+
+<p>
+    <img src="https://img.shields.io/badge/Typescript-2d79c7?style=for-the-badge&logo=Typescript&logoColor=white">
+    <img src="https://img.shields.io/badge/Create React App-282c35?style=for-the-badge&logo=createreactapp&logoColor=09D3AC">
+    <img src="https://img.shields.io/badge/Tailwind CSS-131729?style=for-the-badge&logo=Tailwind CSS&logoColor=78baf2">
+</p>
+
 ## ✨ 주요 기능
 
 1. **이미지 업로드**
@@ -44,25 +63,6 @@
     -   **드롭다운 이미지 비율 선택**
         -   드롭다운 메뉴에서 사전 정의된 비율을 선택하거나 사용자 정의 비율을 입력할 수 있습니다.
         -   사용자 정의 비율 입력 시 실시간 값 검증을 통해 잘못된 상태를 방지합니다.
-
-## 🛠️ 사용법
-
-👉 https://do0ori.github.io/image-ratio-padder/
-
-[![Image Ratio Padder Example](https://github.com/user-attachments/assets/e43b0815-ee3c-4cc1-af64-87cd1f0835d1)](https://do0ori.github.io/image-ratio-padder/)
-
-1. 클릭하여 이미지를 선택하거나 드래그 앤 드롭하여 이미지를 업로드합니다.
-2. 원하는 이미지 비율을 선택하거나, 직접 입력합니다.
-3. 배경색을 선택하여 이미지를 채웁니다.
-4. 다운로드 버튼을 클릭해 처리된 이미지를 다운로드합니다.
-
-## 💻 기술 스택
-
-<p>
-    <img src="https://img.shields.io/badge/Typescript-2d79c7?style=for-the-badge&logo=Typescript&logoColor=white">
-    <img src="https://img.shields.io/badge/Create React App-282c35?style=for-the-badge&logo=createreactapp&logoColor=09D3AC">
-    <img src="https://img.shields.io/badge/Tailwind CSS-131729?style=for-the-badge&logo=Tailwind CSS&logoColor=78baf2">
-</p>
 
 ## 🤝 기여
 
