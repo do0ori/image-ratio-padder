@@ -1,5 +1,5 @@
-import { IoIosMail } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
 
 interface HeaderProps {
     email: string;
@@ -8,7 +8,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ email, githubRepo }) => {
     return (
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between mb-4 gap-4">
             <h1 className="text-3xl font-bold">Image Ratio Padder</h1>
 
             {/* Icons for Email and GitHub */}
