@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import {
-    LuSquare,
     LuRectangleHorizontal,
     LuRectangleVertical,
+    LuSquare,
 } from "react-icons/lu";
-import Header from "../components/Header";
-import FileUploader from "../components/FileUploader";
-import RatioSelector from "../components/RatioSelector";
 import BgColorSelector from "../components/BgColorSelector";
+import FileUploader from "../components/FileUploader";
+import Header from "../components/Header";
 import ImagePreview from "../components/ImagePreview";
+import RatioSelector from "../components/RatioSelector";
+import KakaoAdFit from "../components/ads/KakaoAdFit";
 
 const ImageRatioPadder: React.FC = () => {
     const [image, setImage] = useState<HTMLImageElement | null>(null);
@@ -71,27 +72,67 @@ const ImageRatioPadder: React.FC = () => {
     };
 
     return (
-        <div className="p-4 max-w-2xl mx-auto">
-            <Header
-                email="fuzzydo0ori@gmail.com"
-                githubRepo="https://github.com/do0ori/image-ratio-padder"
-            />
-            <FileUploader handleImageUpload={handleImageUpload} />
-            <RatioSelector
-                ratio={ratio}
-                setRatio={setRatio}
-                options={ratioOptions}
-            />
-            <BgColorSelector
-                backgroundColor={backgroundColor}
-                setBackgroundColor={setBackgroundColor}
-            />
-            <ImagePreview
-                image={image}
-                ratio={ratio}
-                backgroundColor={backgroundColor}
-            />
-        </div>
+        <>
+            {/* Side Ads */}
+            <div className="hidden lg:block">
+                {/* Left-side Ad */}
+                <div
+                    className="fixed top-1/2 transform -translate-y-1/2"
+                    style={{
+                        left: "calc(((100% - 672px) / 2 - 160px) / 2)",
+                    }}
+                >
+                    <KakaoAdFit
+                        adUnit="DAN-XfCoJYZFc8TPkOXS"
+                        adWidth={160}
+                        adHeight={600}
+                    />
+                </div>
+                {/* Right-side Ad */}
+                <div
+                    className="fixed top-1/2 transform -translate-y-1/2"
+                    style={{
+                        right: "calc(((100% - 672px) / 2 - 160px) / 2)",
+                    }}
+                >
+                    <KakaoAdFit
+                        adUnit="DAN-8SlqtJ12kVoZH3EY"
+                        adWidth={160}
+                        adHeight={600}
+                    />
+                </div>
+            </div>
+
+            {/* Content */}
+            <div className="p-4 max-w-2xl mx-auto">
+                <Header
+                    email="fuzzydo0ori@gmail.com"
+                    githubRepo="https://github.com/do0ori/image-ratio-padder"
+                />
+                <FileUploader handleImageUpload={handleImageUpload} />
+                <RatioSelector
+                    ratio={ratio}
+                    setRatio={setRatio}
+                    options={ratioOptions}
+                />
+                <BgColorSelector
+                    backgroundColor={backgroundColor}
+                    setBackgroundColor={setBackgroundColor}
+                />
+                <ImagePreview
+                    image={image}
+                    ratio={ratio}
+                    backgroundColor={backgroundColor}
+                />
+
+                {/* Bottom Ads */}
+                <KakaoAdFit
+                    adUnit="DAN-dDmAnaViV9Li7RPZ"
+                    adWidth={320}
+                    adHeight={100}
+                />
+            </div>
+        </>
     );
 };
 
