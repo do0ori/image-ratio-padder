@@ -126,11 +126,13 @@ const ImageRatioPadder: React.FC = () => {
                 />
 
                 {/* Bottom Ads */}
-                <KakaoAdFit
-                    adUnit="DAN-dDmAnaViV9Li7RPZ"
-                    adWidth={320}
-                    adHeight={100}
-                />
+                <div className="mt-10">
+                    <KakaoAdFit
+                        adUnit="DAN-dDmAnaViV9Li7RPZ"
+                        adWidth={320}
+                        adHeight={100}
+                    />
+                </div>
             </div>
         </>
     );
